@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="app-container">
+    <div class="header__main">
+      <img class="logo" src="assets/img/logo.svg">
+
+      <nav class="menu" [ngClass]="{'menu--active': toggle}">
+        <a *ngFor="let item of links" href="{{item.link}}" class="menu__item">{{item.title | titlecase}}</a>
+      </nav>
+
+      <div class="contacts">
+        <a class="contacts__phone" href="tel:+79675502210">+544 3490 00000</a>
+        <p class="contacts__text">Звони скорее!</p>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <p class="search-result">Найдено 349 котов</p>
+
+      <button class="header__btn" (click)="toggle = !toggle" [ngClass]="{'header__btn--active': toggle}">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

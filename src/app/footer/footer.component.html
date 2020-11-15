@@ -1,0 +1,24 @@
+<footer class="footer app-container">
+
+  <div class="info">
+    <p class="info__title">Успей купить!</p>
+    <p class="info__text">Подпишись и успей словить все акции</p>
+  </div>
+
+  <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" class="form__mail form--style"  placeholder="Email" formControlName="email">
+
+    <div *ngIf="form.get('email').invalid && form.get('email').touched">
+      <p class="form__mail--error">invalid mail</p>
+    </div>
+
+    <button type="submit" class="form__btn form--style" [disabled]="form.invalid">Подписаться</button>
+
+    <input  type="checkbox" class="form__checkbox" id="check" checked>
+    <label for="check" class="label">Подписаться на новости</label>
+
+  </form>
+
+</footer>
+
+

@@ -1,0 +1,144 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #1F2021;
+  color: white;
+  padding: 5rem 5rem 5.75rem;
+}
+
+.info {
+  flex-basis: 22.95rem;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0 0 1.625rem;
+  }
+
+  &__text {
+    font-size: 1.75rem;
+    line-height: 1.7rem;
+  }
+}
+
+.form {
+  position: relative;
+  padding: 0.5rem 0 0;
+  flex-basis: 35.375rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &--style {
+    height: 4rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    outline: none;
+    border: 2px solid transparent;
+  }
+
+  &__mail {
+    flex-basis: 18.75rem;
+    font-size: 0.875rem;
+    color: black;
+    padding: 0 0 0 2rem;
+
+    &--error {
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      font-size: 1rem;
+      color: red;
+    }
+  }
+
+  &__btn {
+    flex-basis: 15.625rem;
+    font-weight: 700;
+    background-color: #6EBBD3;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .label {
+    flex-basis: 100%;
+    font-size: 0.875rem;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    & + .label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1.125rem;
+        height: 1.125rem;
+        flex-shrink: 0;
+        flex-grow: 0;
+        background: #6EBBD3 no-repeat center center;
+        border-radius: 0.25em;
+        margin-right: 0.5em;
+        background-size: 50% 50%;
+      }
+    }
+
+    &:checked + .label:before {
+      border-color: #6EBBD3;
+      background-color: #6EBBD3;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+@media (max-width: 1064px) {
+  .footer {
+    padding: 2rem;
+    justify-content: space-around;
+  }
+
+  .form {
+    flex-direction: column;
+
+    &__mail {
+      flex-basis: auto;
+    }
+
+    &__btn {
+      flex-basis: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+  .info {
+    flex-basis: auto;
+
+    &__title {
+      font-size: 2rem;
+      padding: 0;
+    }
+
+    &__text {
+      font-size: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+  .form {
+    flex-basis: auto;
+  }
+}
+

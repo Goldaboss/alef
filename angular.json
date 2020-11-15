@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "alef"
+    }
+  },
+  "defaultProject": "alef",
+  "cli": {
+    "analytics": false
+  }
 }
