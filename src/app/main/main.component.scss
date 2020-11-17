@@ -1,0 +1,145 @@
+.main {
+
+  .header {
+    display: flex;
+    padding: 2.375rem 0;
+
+    &__title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      padding-right: 3rem;
+    }
+
+    &__btn {
+      position: relative;
+      border: none;
+      outline: none;
+      background: none;
+      padding-right: 2rem;
+      margin-right: 2rem;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+        transform: rotate(-45deg);
+        top: 15%;
+        right: 0;
+      }
+    }
+  }
+
+  .catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -0.5rem;
+
+    .item {
+      width: 31.5%;
+      margin: 0.5rem;
+
+
+      &__info {
+        padding: 1.8rem;
+        background: #F3F3F3;
+
+        .name {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-top: 0;
+        }
+
+        .data {
+          display: flex;
+
+          .color {
+            width: 40%;
+            height: 100%;
+            font-size: 0.75rem;
+            border-left: 0.25rem solid #6EBBD3;
+            padding-left: 1.125rem;
+          }
+
+          .age {
+            width: 30%;
+          }
+
+          .paws {
+            width: 30%;
+          }
+        }
+      }
+
+      &__price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-top: 1rem;
+      }
+
+      &__btn {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ffffff;
+        width: 100%;
+        padding: 1.315rem 0;
+        border: none;
+        border-radius: 0 0 1rem 1rem;
+        background: #6EBBD3;
+      }
+    }
+  }
+
+  .footer {
+    position: relative;
+    padding: 3.75rem 0 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+
+    .btn-add {
+      padding: 1.5rem 8rem;
+      border: 1px solid #CACACA;
+      border-radius: 10px;
+    }
+
+    .btn-scroll {
+      width: 3.75rem;
+      height: 3.75rem;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border: none;
+      background: #6EBBD3;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        background: #ffffff;
+        width: 5%;
+        height: 31%;
+        left: 38%;
+        top: 40%;
+        transform: rotate(45deg);
+        border-radius: 2px 0 2px 2px;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        background: #ffffff;
+        width: 5%;
+        height: 31%;
+        right: 38%;
+        top: 40%;
+        transform: rotate(-45deg);
+        border-radius: 0 2px 2px 2px;
+      }
+    }
+  }
+}

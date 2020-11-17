@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 export interface Link {
   title: string;
   link: string;
@@ -9,11 +9,10 @@ export interface Link {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
+export class HeaderComponent  {
   toggle = false;
-
-  constructor() { }
+  @Input() count: number;
+  constructor() {}
 
   links: Link[] = [
     {title: 'main', link: '#'},
@@ -21,8 +20,4 @@ export class HeaderComponent implements OnInit {
     {title: 'news', link: '#'},
     {title: 'profile', link: '#'},
   ];
-
-  ngOnInit(): void {
-  }
-
 }

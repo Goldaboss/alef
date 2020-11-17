@@ -1,14 +1,13 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  box-sizing: border-box;
   background: #1F2021;
   color: white;
   padding: 5rem 5rem 5.75rem;
 }
 
 .info {
-  flex-basis: 22.95rem;
+  width: 45%;
 
   &__title {
     font-size: 3rem;
@@ -17,55 +16,56 @@
   }
 
   &__text {
+    padding-right: 20%;
     font-size: 1.75rem;
     line-height: 1.7rem;
   }
 }
 
 .form {
+  width: 56%;
   position: relative;
-  padding: 0.5rem 0 0;
-  flex-basis: 35.375rem;
   display: flex;
   flex-wrap: wrap;
+  padding: 0.5rem 0 0;
   justify-content: space-between;
 
-  &--style {
+  &--wrap {
     height: 4rem;
     box-sizing: border-box;
     border-radius: 10px;
-    margin-bottom: 1.5rem;
     outline: none;
     border: 2px solid transparent;
+    margin-bottom: 0.5rem;
   }
 
   &__mail {
-    flex-basis: 18.75rem;
+    width: 53%;
     font-size: 0.875rem;
     color: black;
     padding: 0 0 0 2rem;
 
     &--error {
-      position: absolute;
-      top: -1rem;
-      left: 0;
+      width: 100%;
       font-size: 1rem;
-      color: red;
     }
   }
 
   &__btn {
-    flex-basis: 15.625rem;
+    width: 44%;
     font-weight: 700;
     background-color: #6EBBD3;
 
     &:hover {
       opacity: 0.8;
     }
+    &:active {
+      opacity: 1;
+      border: 2px solid black;
+    }
   }
 
   .label {
-    flex-basis: 100%;
     font-size: 0.875rem;
   }
 
@@ -76,7 +76,6 @@
 
     & + .label {
       display: inline-flex;
-      align-items: center;
       user-select: none;
 
       &:before {
@@ -101,23 +100,15 @@
   }
 }
 
-@media (max-width: 1064px) {
+@media (max-width: 1180px) {
   .footer {
     padding: 2rem;
     justify-content: space-around;
   }
+}
 
-  .form {
-    flex-direction: column;
+@media (max-width: 992px) {
 
-    &__mail {
-      flex-basis: auto;
-    }
-
-    &__btn {
-      flex-basis: auto;
-    }
-  }
 }
 
 @media (max-width: 768px) {
@@ -125,7 +116,7 @@
     flex-direction: column;
   }
   .info {
-    flex-basis: auto;
+    width: 100%;
 
     &__title {
       font-size: 2rem;
@@ -135,10 +126,26 @@
     &__text {
       font-size: 1rem;
       padding-bottom: 1rem;
+      padding-right: 0;
     }
   }
+
   .form {
-    flex-basis: auto;
+    flex-direction: column;
+    width: 100%;
+
+    &__mail {
+      width: 100%;
+      order: -2;
+
+      &--error {
+        order: -1;
+      }
+    }
+
+    &__btn {
+      width: 100%;
+    }
   }
 }
 

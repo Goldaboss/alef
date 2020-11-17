@@ -1,2 +1,4 @@
-<app-header></app-header>
+<app-header [count]="count"></app-header>
+<app-main (outCount)="onCountChange($event)"></app-main>
 <app-footer></app-footer>
+

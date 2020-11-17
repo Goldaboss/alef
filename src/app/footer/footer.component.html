@@ -5,20 +5,20 @@
     <p class="info__text">Подпишись и успей словить все акции</p>
   </div>
 
-  <form action="" class="form" [formGroup]="form" (ngSubmit)="submit()">
-    <input type="text" class="form__mail form--style"  placeholder="Email" formControlName="email">
+  <form action="" class="form" [formGroup]="form">
 
-    <div *ngIf="form.get('email').invalid && form.get('email').touched">
-      <p class="form__mail--error">invalid mail</p>
-    </div>
+    <input type="text" class="form__mail form--wrap" placeholder="Email" formControlName="email">
 
-    <button type="submit" class="form__btn form--style" [disabled]="form.invalid">Подписаться</button>
 
-    <input  type="checkbox" class="form__checkbox" id="check" checked>
+    <button type="submit" class="form__btn form--wrap" [disabled]="form.invalid">Подписаться</button>
+
+    <p *ngIf="form.get('email').invalid && form.get('email').touched" class="form__mail--error" required>Введите корректный
+      адрес</p>
+
+    <input type="checkbox" class="form__checkbox" id="check" formControlName="checkbox">
     <label for="check" class="label">Подписаться на новости</label>
 
   </form>
-
 </footer>
 
 

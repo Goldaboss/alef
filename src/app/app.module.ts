@@ -1,23 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MainComponent } from './main/main.component';
+import {registerLocaleData} from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'ru' },
+    {provide: DEFAULT_CURRENCY_CODE, useValue: 'ru'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+registerLocaleData(localeRu);
