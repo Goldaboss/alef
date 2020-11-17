@@ -172,8 +172,9 @@ $menuBtnSize: 26px;
     width: 100%;
     top: 100%;
     align-items: flex-end;
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: $menuTransition;
+    height: 100vh;
 
     &__item {
       margin: 1rem 2rem;

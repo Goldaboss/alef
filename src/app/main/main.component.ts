@@ -1,15 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-
-export interface Cat {
-  img: string;
-  discount?: number;
-  name?: string;
-  color?: string;
-  age?: number;
-  paws?: number;
-  price?: number;
-  stoke?: boolean;
-}
+import {Component, OnInit} from '@angular/core';
+import {Cat, CatDataService} from '../services/cat-data.service';
 
 @Component({
   selector: 'app-main',
@@ -17,21 +7,27 @@ export interface Cat {
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  @Output() outCount: EventEmitter<number> = new EventEmitter<number>();
+  orderTogglePrice = false;
 
-  catalog: Cat[] = [
-    {img: './assets/img/cats/cat-1.png', name: 'Кот полосатый', color: 'Коричневый окрас', age: 2, paws: 4, price: 30000, stoke: true},
-    {img: './assets/img/cats/cat-1.png', name: 'Кот полосатый', color: 'Коричневый окрас', age: 2, paws: 4, price: 40000, stoke: true},
-    {img: './assets/img/cats/cat-1.png', name: 'Кот полосатый', color: 'Коричневый окрас', age: 2, paws: 4, price: 20000, stoke: true},
-    {img: './assets/img/cats/cat-1.png', name: 'Кот полосатый', color: 'Коричневый окрас', age: 2, paws: 4, price: 35000, stoke: true},
-    {img: './assets/img/cats/cat-1.png', name: 'Кот полосатый', color: 'Коричневый окрас', age: 2, paws: 4, price: 30000, stoke: true},
-    {img: './assets/img/cats/cat-1.png', name: 'Кот полосатый', color: 'Коричневый окрас', age: 2, paws: 4, price: 10000, stoke: true},
-  ];
+  catalog: Cat[] = [];
+  viewCatalog: Cat[] = [];
 
-  constructor() {
+  constructor(
+    private readonly catService: CatDataService
+  ) {
   }
 
   ngOnInit(): void {
-    this.outCount.emit(this.catalog.length);
+    this.catalog = this.catService.catsData;
+    this.viewCatalog.push(...this.catalog.splice(0, 3));
+  }
+
+  sortByPrice(): void {
+    if (!this.orderTogglePrice) {
+      this.catalog.sort((a, b) => a.price - b.price);
+    } else {
+      this.catalog.reverse();
+    }
+    this.orderTogglePrice = !this.orderTogglePrice;
   }
 }

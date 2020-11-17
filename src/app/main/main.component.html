@@ -1,7 +1,7 @@
 <main class="main app-container">
   <div class="header">
     <p class="header__title">Сортировать по:</p>
-    <button class="header__btn">Цене</button>
+    <button class="header__btn" (click)="sortByPrice()" [ngClass]="{'header__btn--up': orderTogglePrice}">Цене</button>
     <button class="header__btn">Возрасту</button>
   </div>
 

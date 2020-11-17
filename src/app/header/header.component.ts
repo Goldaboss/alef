@@ -1,4 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
+import {CatDataService} from '../services/cat-data.service';
+
 export interface Link {
   title: string;
   link: string;
@@ -11,8 +13,12 @@ export interface Link {
 })
 export class HeaderComponent  {
   toggle = false;
-  @Input() count: number;
-  constructor() {}
+  count: number = this.catService.catsLength;
+
+  constructor(
+    private readonly catService: CatDataService
+  ) {
+  }
 
   links: Link[] = [
     {title: 'main', link: '#'},
