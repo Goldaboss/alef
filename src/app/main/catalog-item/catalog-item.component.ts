@@ -8,9 +8,13 @@ import {Cat} from '../../services/cat-data.service';
 })
 export class CatalogItemComponent implements OnInit {
   @Input() item: Cat;
+  likeToggle = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  likeCat(): void {
+    this.likeToggle = !this.likeToggle;
+  }
 }

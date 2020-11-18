@@ -1,5 +1,6 @@
 $marginItem: 20px;
 :host {
+  position: relative;
   width: calc(33% - (#{$marginItem} / 2));
   border-radius: 0 0 10px 10px;
   margin-bottom: $marginItem;
@@ -11,6 +12,31 @@ $marginItem: 20px;
 }
 
 .item {
+  &__discount {
+    position: absolute;
+    display: inline-block;
+    padding: 9px 18px;
+    background: #E52D2D;
+    border-radius: 10px;
+    color: white;
+    top: 34px;
+    left: 38px;
+  }
+
+  &__like {
+    position: absolute;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    outline: none;
+    top: 36px;
+    right: 32px;
+    opacity: 0.5;
+
+    &--active {
+     opacity: 1;
+    }
+  }
 
   &__wrap--img {
     max-height: 264px;

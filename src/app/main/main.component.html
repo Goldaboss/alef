@@ -14,7 +14,7 @@
   </div>
 
   <div class="footer">
-    <button class="btn-add" (click)="addCats()">показать еще 20</button>
+    <button class="btn-add" (click)="addCats()" *ngIf="catalog.length">показать еще 3</button>
     <button class="btn-scroll" (click)="scrollUp()"></button>
   </div>
 </main>
