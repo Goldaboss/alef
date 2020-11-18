@@ -1,0 +1,16 @@
+<div class="item">
+  <div class="item__wrap--img">
+    <img src="{{item.img}}" alt="Фото кота" class="item__img">
+  </div>
+  <div class="item__info">
+    <h3 class="name">{{item.name}}</h3>
+    <div class="data">
+      <p class="color">{{item.color}}</p>
+      <p class="age"><b>{{item.age}} мес.</b><br><small>Возраст</small></p>
+      <p class="paws"><b>{{item.paws}}</b><br><small>Кол-во лап</small></p>
+    </div>
+    <p class="item__price">{{item.price | currency:'RUB':'руб.':'1.0'}}</p>
+  </div>
+  <button class="item__btn" *ngIf="item.stoke">Купить</button>
+  <button class="item__btn" *ngIf="!item.stoke" disabled>Продан</button>
+</div>

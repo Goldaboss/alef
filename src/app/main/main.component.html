@@ -1,30 +1,20 @@
 <main class="main app-container">
   <div class="header">
     <p class="header__title">Сортировать по:</p>
-    <button class="header__btn" (click)="sortByPrice()" [ngClass]="{'header__btn--up': orderTogglePrice}">Цене</button>
-    <button class="header__btn">Возрасту</button>
+    <button class="header__btn" (click)="sortByPrice()" [ngClass]="{'header__btn__price--up': orderTogglePrice}">Цене</button>
+    <button class="header__btn" (click)="sortByAge()" [ngClass]="{'header__btn__age--up': orderToggleAge}">Возрасту</button>
   </div>
 
   <div class="catalog">
-    <div class="item" *ngFor="let item of catalog">
-      <div>
-        <img src="{{item.img}}" alt="Фото кота" width="100%" height="100%" class="item__img">
-      </div>
-      <div class="item__info">
-        <h3 class="name">{{item.name}}</h3>
-        <div class="data">
-          <p class="color">{{item.color}}</p>
-          <p class="age"><b>{{item.age}} мес. </b><small>Возраст</small></p>
-          <p class="paws"><b>{{item.paws}}</b><br><small>Кол-во лап</small></p>
-        </div>
-        <p class="item__price">{{item.price | currency:'RUB':'руб.':'1.0'}}</p>
-      </div>
-      <button class="item__btn">Купить</button>
-    </div>
+    <app-catalog-item
+      *ngFor="let item of viewCatalog"
+      [item]="item"
+    >
+    </app-catalog-item>
   </div>
 
   <div class="footer">
-    <button class="btn-add">показать еще 20</button>
-    <button class="btn-scroll"></button>
+    <button class="btn-add" (click)="addCats()">показать еще 20</button>
+    <button class="btn-scroll" (click)="scrollUp()"></button>
   </div>
 </main>

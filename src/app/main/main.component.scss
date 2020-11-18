@@ -33,10 +33,20 @@
         transform-origin: 50% 50%;
       }
 
-      &--up {
+      &__price--up {
         &:after {
           transform: rotate(135deg);
         }
+      }
+
+      &__age--up {
+        &:after {
+          transform: rotate(135deg);
+        }
+      }
+
+      &:hover {
+        color: #6EBBD3;
       }
     }
   }
@@ -45,61 +55,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 -0.5rem;
-
-    .item {
-      width: 31.5%;
-      margin: 0.5rem;
 
 
-      &__info {
-        padding: 1.8rem;
-        background: #F3F3F3;
-
-        .name {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-top: 0;
-        }
-
-        .data {
-          display: flex;
-
-          .color {
-            width: 40%;
-            height: 100%;
-            font-size: 0.75rem;
-            border-left: 0.25rem solid #6EBBD3;
-            padding-left: 1.125rem;
-          }
-
-          .age {
-            width: 30%;
-          }
-
-          .paws {
-            width: 30%;
-          }
-        }
-      }
-
-      &__price {
-        font-size: 1.5rem;
-        font-weight: 700;
-        padding-top: 1rem;
-      }
-
-      &__btn {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #ffffff;
-        width: 100%;
-        padding: 1.315rem 0;
-        border: none;
-        border-radius: 0 0 1rem 1rem;
-        background: #6EBBD3;
-      }
-    }
   }
 
   .footer {
@@ -112,6 +69,17 @@
       padding: 1.5rem 8rem;
       border: 1px solid #CACACA;
       border-radius: 10px;
+      outline: none;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
+      }
+
+      &:active {
+        border-color: transparent;
+        box-shadow: inset 0 0 15px 2px black;
+      }
     }
 
     .btn-scroll {
@@ -122,6 +90,7 @@
       bottom: 0;
       border: none;
       background: #6EBBD3;
+      outline: none;
 
       &:after {
         content: "";
@@ -148,6 +117,19 @@
         transform: rotate(-45deg);
         border-radius: 0 2px 2px 2px;
       }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
+      }
+
+      &:active {
+        border-color: transparent;
+        box-shadow: inset 0 0 15px 2px black;
+      }
     }
   }
 }
+
+
+
