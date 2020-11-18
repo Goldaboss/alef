@@ -1,6 +1,6 @@
 <div class="item">
   <span class="item__discount" *ngIf="item.discount">-{{item.discount}}%</span>
-  <button class="item__like" (click)="likeCat()" [ngClass]="{'item__like--active': likeToggle}"><img src="/assets/img/Like-white.svg"></button>
+  <button class="item__like" (click)="likeCat()" [ngClass]="{'item__like--active': likeToggle}"><img src="./assets/img/Like-white.svg"></button>
   <div class="item__wrap--img">
     <img src="{{item.img}}" alt="Фото кота" class="item__img">
   </div>
