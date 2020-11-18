@@ -1,6 +1,6 @@
 <div class="item">
   <span class="item__discount" *ngIf="item.discount">-{{item.discount}}%</span>
-  <button class="item__like" (click)="likeCat()" [ngClass]="{'item__like--active': likeToggle}"><img src="./assets/img/Like-white.svg"></button>
+  <button type="button" class="item__like" (click)="likeCat()" [ngClass]="{'item__like--active': likeToggle}"><img src="./assets/img/Like-white.svg"></button>
   <div class="item__wrap--img">
     <img src="{{item.img}}" alt="Фото кота" class="item__img">
   </div>
@@ -13,6 +13,6 @@
     </div>
     <p class="item__price">{{item.price | currency:'RUB':'руб.':'1.0'}}</p>
   </div>
-  <button class="item__btn" *ngIf="item.stoke">Купить</button>
-  <button class="item__btn" *ngIf="!item.stoke" disabled>Продан</button>
+  <button type="button" class="item__btn" *ngIf="item.stoke">Купить</button>
+  <button type="button" class="item__btn" *ngIf="!item.stoke" disabled>Продан</button>
 </div>

@@ -1,8 +1,8 @@
 <main class="main app-container">
   <div class="header">
     <p class="header__title">Сортировать по:</p>
-    <button class="header__btn" (click)="sortByPrice()" [ngClass]="{'header__btn__price--up': orderTogglePrice}">Цене</button>
-    <button class="header__btn" (click)="sortByAge()" [ngClass]="{'header__btn__age--up': orderToggleAge}">Возрасту</button>
+    <button type="button" class="header__btn" (click)="sortByPrice()" [ngClass]="{'header__btn__price--up': orderTogglePrice}">Цене</button>
+    <button type="button" class="header__btn" (click)="sortByAge()" [ngClass]="{'header__btn__age--up': orderToggleAge}">Возрасту</button>
   </div>
 
   <div class="catalog">
@@ -15,8 +15,8 @@
   </div>
 
   <div class="footer">
-    <button class="btn-add" (click)="addCats()" *ngIf="catalog.length">показать еще 3</button>
-    <button class="btn-scroll" (click)="scrollUp()"></button>
+    <button type="button" class="btn-add" (click)="addCats()" *ngIf="catalog.length">показать еще 3</button>
+    <button type="button" class="btn-scroll" (click)="scrollUp()"></button>
   </div>
 </main>
 
