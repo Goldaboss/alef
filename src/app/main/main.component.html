@@ -9,6 +9,7 @@
     <app-catalog-item
       *ngFor="let item of viewCatalog"
       [item]="item"
+      (like)="onLike()"
     >
     </app-catalog-item>
   </div>
@@ -18,3 +19,7 @@
     <button class="btn-scroll" (click)="scrollUp()"></button>
   </div>
 </main>
+
+<div class="popup-like" [ngClass]="{'popup-like--active': showPopup}">
+  <p>Добавлено в избранное</p>
+</div>

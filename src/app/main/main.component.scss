@@ -131,5 +131,20 @@
   }
 }
 
+.popup-like {
+  position: fixed;
+  transform: translateY(-1000%);
+  transition: 200ms transform ease;
+  top: 30px;
+  right: 30px;
+  background: #6EBBD3;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 24px;
+  color: white;
 
+  &--active {
+    transform: translateY(0);
+  }
+}
 

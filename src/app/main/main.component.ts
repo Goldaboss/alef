@@ -9,9 +9,10 @@ import {Cat, CatDataService} from '../services/cat-data.service';
 export class MainComponent implements OnInit {
   orderTogglePrice = false;
   orderToggleAge = false;
+  showPopup = false;
   catalog: Cat[] = [];
   viewCatalog: Cat[] = [];
-  @Output() onScroll: EventEmitter<void> = new EventEmitter<void>();
+  @Output() scrollToTop: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private readonly catService: CatDataService
@@ -47,6 +48,13 @@ export class MainComponent implements OnInit {
   }
 
   scrollUp(): void {
-    this.onScroll.emit();
+    this.scrollToTop.emit();
+  }
+
+  onLike(): void {
+    this.showPopup = true;
+    setTimeout(() => {
+      this.showPopup = false;
+    }, 1000);
   }
 }
