@@ -128,8 +128,6 @@ $menuBtnSize: 26px;
   margin: 0;
 }
 
-
-
 @media (max-width: 1180px) {
   .app-container {
     padding: 0 2rem;
@@ -152,15 +150,15 @@ $menuBtnSize: 26px;
 
     &__main {
       justify-content: space-between;
-
-      .contacts {
-        align-self: center;
-      }
     }
 
     &__bottom {
       padding: 1rem 0 2rem;
     }
+  }
+
+  .contacts {
+    align-self: center;
   }
 
   .menu {
@@ -176,26 +174,19 @@ $menuBtnSize: 26px;
     transition: $menuTransition;
     height: 100vh;
 
-    &__item {
-      margin: 1rem 2rem;
-    }
-
     &--active {
       transform: translateX(0);
     }
 
     &__item {
+      margin: 1rem 2rem;
       flex-basis: auto;
       font-size: 2rem;
+
+      &:hover {
+        background-color: #CFD8DC;
+      }
     }
-  }
-
-  .menu__item:hover {
-    background-color: #CFD8DC;
-  }
-
-  .search-result {
-    font-size: 1.5rem;
   }
 
   .search-result {

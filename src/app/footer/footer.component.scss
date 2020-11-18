@@ -72,7 +72,7 @@
     }
   }
 
-  .label {
+  &__label {
     font-size: 0.875rem;
     cursor: pointer;
   }
@@ -120,6 +120,7 @@
     flex-direction: column;
     margin: 0 -2rem;
   }
+
   .info {
     width: 100%;
 
