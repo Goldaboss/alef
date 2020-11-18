@@ -1,3 +1,5 @@
+$paddingContainer: 2rem;
+
 @font-face {
   font-family: Montserrat-Bold;
   src: url(~src/assets/fonts/Montserrat-Bold.ttf);
@@ -23,10 +25,11 @@ body {
 }
 
 .app-container {
-  max-width: 1280px;
+  max-width: calc(1280px + #{$paddingContainer});
+  display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 $paddingContainer;
 }
 
 p {
